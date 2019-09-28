@@ -9,7 +9,7 @@ import javax.inject.Singleton
 class CreateAccountCommandHandler(private val accountService: AccountService) :
         CommandHandler<Unit, CreateAccountCommand> {
 
-    override fun handle(command: CreateAccountCommand) {
+    override suspend fun handleAsync(command: CreateAccountCommand) {
         accountService.save(Account.new(command.owner, command.balance))
     }
 }

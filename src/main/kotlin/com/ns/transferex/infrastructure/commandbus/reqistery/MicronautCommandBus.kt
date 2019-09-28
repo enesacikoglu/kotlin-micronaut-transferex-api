@@ -1,6 +1,9 @@
 package com.ns.transferex.infrastructure.commandbus.reqistery
 
 import com.ns.transferex.infrastructure.commandbus.*
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 import javax.inject.Singleton
 
 
@@ -14,13 +17,13 @@ open class MicronautCommandBus(private val registry: Registry) : CommandBus {
      *
      * @param registry registry
      */
-    override fun <R, Q : Query<R>> executeQuery(query: Q): R {
+    override suspend fun <R, Q : Query<R>> executeQueryAsync(query: Q): Deferred<R> {
         val commandHandler = registry.getQuery(query.javaClass) as QueryHandler<R, Q>
-        return commandHandler.handle(query)
+        return GlobalScope.async { commandHandler.handleAsync(query) }
     }
 
-    override fun <TResponse, TCommand : Command<TResponse>> executeCommand(command: TCommand): TResponse {
+    override suspend fun <TResponse, TCommand : Command<TResponse>> executeCommandAsync(command: TCommand): Deferred<TResponse> {
         val commandHandler = registry.getCmd(command.javaClass) as CommandHandler<TResponse, TCommand>
-        return commandHandler.handle(command)
+        return GlobalScope.async { commandHandler.handleAsync(command) }
     }
 }

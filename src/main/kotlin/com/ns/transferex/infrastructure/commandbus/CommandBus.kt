@@ -1,9 +1,11 @@
 package com.ns.transferex.infrastructure.commandbus
 
+import kotlinx.coroutines.Deferred
+
 
 interface CommandBus {
-    fun <TResponse, TCommand : Command<TResponse>> executeCommand(command: TCommand): TResponse
+    suspend fun <TResponse, TCommand : Command<TResponse>> executeCommandAsync(command: TCommand): Deferred<TResponse>
 
-    fun <R, Q : Query<R>> executeQuery(query: Q): R
+    suspend fun <R, Q : Query<R>> executeQueryAsync(query: Q): Deferred<R>
 }
 

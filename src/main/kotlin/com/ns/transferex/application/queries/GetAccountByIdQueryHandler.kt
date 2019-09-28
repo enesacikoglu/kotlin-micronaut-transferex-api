@@ -7,7 +7,7 @@ import javax.inject.Singleton
 
 @Singleton
 class GetAccountByIdQueryHandler(private val accountService: AccountService) : QueryHandler<GetAccountByIdResponse?, GetAccountByIdQuery> {
-    override fun handle(query: GetAccountByIdQuery): GetAccountByIdResponse? {
+    override suspend fun handleAsync(query: GetAccountByIdQuery): GetAccountByIdResponse? {
         with(query) {
             val account = accountService.getAccountById(accountId)
             return GetAccountByIdResponse(accountId, account.owner, account.balance)
