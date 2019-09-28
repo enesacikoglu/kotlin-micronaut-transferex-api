@@ -1,6 +1,6 @@
-package com.trendyol.productcontenteditorapi.infra.commandbus.spring
+package com.ns.transferex.infrastructure.commandbus.reqistery
 
-import com.trendyol.productcontenteditorapi.infra.commandbus.CommandHandler
+import com.ns.transferex.infrastructure.commandbus.CommandHandler
 import io.micronaut.context.ApplicationContext
 
 

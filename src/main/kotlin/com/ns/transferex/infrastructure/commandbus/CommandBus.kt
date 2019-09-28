@@ -1,11 +1,9 @@
-package com.trendyol.productcontenteditorapi.infra.commandbus
-
-import kotlinx.coroutines.Deferred
+package com.ns.transferex.infrastructure.commandbus
 
 
 interface CommandBus {
-    suspend fun <TResponse, TCommand : Command<TResponse>> executeCommandAsync(command: TCommand): Deferred<TResponse>
+    fun <TResponse, TCommand : Command<TResponse>> executeCommand(command: TCommand): TResponse
 
-    suspend fun <R, Q : Query<R>> executeQueryAsync(query: Q): Deferred<R>
+    fun <R, Q : Query<R>> executeQuery(query: Q): R
 }
 

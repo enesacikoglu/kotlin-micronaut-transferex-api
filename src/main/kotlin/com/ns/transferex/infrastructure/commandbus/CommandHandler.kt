@@ -1,6 +1,6 @@
-package com.trendyol.productcontenteditorapi.infra.commandbus
+package com.ns.transferex.infrastructure.commandbus
 
 interface CommandHandler<TResponse, TCommand : Command<TResponse>> {
-    suspend fun handleAsync(command: TCommand): TResponse
+    fun handle(command: TCommand): TResponse
 }
 

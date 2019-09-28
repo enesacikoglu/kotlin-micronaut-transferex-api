@@ -1,12 +1,12 @@
-package com.trendyol.productcontenteditorapi.infra.commandbus.spring
+package com.ns.transferex.infrastructure.commandbus.reqistery
 
-import com.trendyol.productcontenteditorapi.infra.commandbus.Command
-import com.trendyol.productcontenteditorapi.infra.commandbus.CommandHandler
-import com.trendyol.productcontenteditorapi.infra.commandbus.Query
-import com.trendyol.productcontenteditorapi.infra.commandbus.QueryHandler
+import com.ns.transferex.infrastructure.commandbus.Command
+import com.ns.transferex.infrastructure.commandbus.CommandHandler
+import com.ns.transferex.infrastructure.commandbus.Query
+import com.ns.transferex.infrastructure.commandbus.QueryHandler
 import io.micronaut.context.ApplicationContext
 import io.micronaut.inject.BeanDefinition
-import org.springframework.core.GenericTypeResolver
+import io.micronaut.core.reflect.GenericTypeUtils
 import java.util.*
 import javax.inject.Singleton
 
@@ -32,7 +32,7 @@ class Registry(applicationContext: ApplicationContext) {
 
     private fun registerCommand(applicationContext: ApplicationContext, bean: BeanDefinition<CommandHandler<*, *>>) {
         val handlerClass = bean.beanType
-        val generics = GenericTypeResolver.resolveTypeArguments(handlerClass, CommandHandler::class.java)
+        val generics = GenericTypeUtils.resolveInterfaceTypeArguments(handlerClass, CommandHandler::class.java)
         val commandType = generics!![1] as Class<Command<*>>
         commandProviderMap[commandType] = CommandProvider(applicationContext, handlerClass)
     }
@@ -40,7 +40,7 @@ class Registry(applicationContext: ApplicationContext) {
 
     private fun registerQuery(applicationContext: ApplicationContext, bean: BeanDefinition<QueryHandler<*, *>>) {
         val handlerClass = bean.beanType
-        val generics = GenericTypeResolver.resolveTypeArguments(handlerClass, QueryHandler::class.java)
+        val generics = GenericTypeUtils.resolveInterfaceTypeArguments(handlerClass, QueryHandler::class.java)
         val queryType = generics!![1] as Class<Query<*>>
         queryProviderMap[queryType] = QueryProvider(applicationContext, handlerClass)
     }

@@ -1,6 +1,6 @@
-package com.trendyol.productcontenteditorapi.infra.commandbus.spring
+package com.ns.transferex.infrastructure.commandbus.reqistery
 
-import com.trendyol.productcontenteditorapi.infra.commandbus.QueryHandler
+import com.ns.transferex.infrastructure.commandbus.QueryHandler
 import io.micronaut.context.ApplicationContext
 
 internal class QueryProvider<H : QueryHandler<*, *>>(private val applicationContext: ApplicationContext, private val type: Class<H>) {

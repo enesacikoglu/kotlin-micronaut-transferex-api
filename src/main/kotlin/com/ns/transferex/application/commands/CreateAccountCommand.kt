@@ -1,6 +1,6 @@
-package com.trendyol.productcontenteditorapi.application.commands
+package com.ns.transferex.application.commands
 
-import com.trendyol.productcontenteditorapi.infra.commandbus.Command
+import com.ns.transferex.infrastructure.commandbus.Command
 import java.math.BigDecimal
 import javax.validation.constraints.DecimalMin
 import javax.validation.constraints.NotBlank

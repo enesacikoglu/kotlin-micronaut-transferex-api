@@ -1,3 +1,3 @@
-package com.trendyol.productcontenteditorapi.infra.commandbus
+package com.ns.transferex.infrastructure.commandbus
 
 interface Query<R>
