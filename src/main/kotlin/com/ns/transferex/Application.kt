@@ -14,7 +14,7 @@ object Application {
     @JvmStatic
     fun main(args: Array<String>) {
         Micronaut.build()
-                .packages("com.ns.transferexs")
+                .packages("com.ns.transferex")
                 .mainClass(Application.javaClass)
                 .start()
     }
