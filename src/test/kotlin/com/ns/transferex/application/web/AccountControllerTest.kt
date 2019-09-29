@@ -54,11 +54,7 @@ open class AccountControllerTest {
 
     @AfterEach
     fun stopServer() {
-        if (server != null) {
-            server.stop()
-        }
-        if (client != null) {
-            client.stop()
-        }
+        server.stop()
+        client.stop()
     }
 }
