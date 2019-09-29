@@ -1,14 +1,12 @@
 package com.ns.transferex.domain
 
 import java.math.BigDecimal
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import javax.persistence.*
 
 @Entity
+@Table(name = "Transaction")
 data class Transaction(@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-                       private val id: Int = 0,
+                       var id: Int = 0,
                        var fromAccount: Int = 0,
                        var toAccount: Int = 0,
                        var amount: BigDecimal = BigDecimal.ZERO) {

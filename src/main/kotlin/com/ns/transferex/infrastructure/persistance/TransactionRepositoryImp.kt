@@ -9,6 +9,12 @@ import javax.persistence.EntityManager
 @Singleton
 open class TransactionRepositoryImp(private val entityManager: EntityManager) : TransactionRepository {
 
+    override fun findAll(): List<Transaction> {
+        return entityManager
+                .createQuery("Select t from Transaction t", Transaction::class.java)
+                .resultList
+    }
+
     override fun insert(entity: Transaction) {
         entityManager.persist(entity)
     }

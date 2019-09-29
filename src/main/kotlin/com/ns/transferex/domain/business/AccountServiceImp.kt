@@ -9,7 +9,6 @@ import javax.inject.Singleton
 
 @Singleton
 open class AccountServiceImp(private val accountRepository: AccountRepository) : AccountService {
-
     @Transactional
     override fun save(account: Account) {
         accountRepository.insert(account)
@@ -23,4 +22,10 @@ open class AccountServiceImp(private val accountRepository: AccountRepository) :
         return accountRepository.findById(id)
                 .orElseThrow { throw DomainNotFoundException("account not found!") }
     }
+
+    @Transactional(readOnly = true)
+    override fun getAll(): List<Account> {
+        return accountRepository.findAll()
+    }
+
 }

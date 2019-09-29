@@ -11,6 +11,11 @@ import javax.inject.Singleton
 open class TransactionServiceImp(private val transactionRepository: TransactionRepository) : TransactionService {
 
     @Transactional(readOnly = true)
+    override fun getAll(): List<Transaction> {
+        return transactionRepository.findAll()
+    }
+
+    @Transactional(readOnly = true)
     override fun getTransactionById(id: Int): Transaction {
         return transactionRepository.findById(id)
                 .orElseThrow { throw DomainNotFoundException("transaction.not.found") }
