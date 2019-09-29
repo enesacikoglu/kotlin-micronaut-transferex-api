@@ -8,8 +8,7 @@ import javax.inject.Singleton
 import javax.persistence.EntityManager
 
 @Singleton
-open class AccountRepositoryImp(@Inject
-                                private val entityManager: EntityManager) : AccountRepository {
+open class AccountRepositoryImp(private val entityManager: EntityManager) : AccountRepository {
     override fun insert(entity: Account) {
         entityManager.persist(entity)
     }
