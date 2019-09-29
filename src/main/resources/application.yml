@@ -3,10 +3,6 @@ micronaut:
     name: micronaut-transferex-api
   server:
     port: 6161
-  router:
-    static-resources:
-      swagger:
-        paths: classpath:META-INF/swagger
 
 jackson:
   default-property-inclusion: non_null
@@ -26,19 +22,3 @@ jpa:
           auto: update
         show_sql: false
         format_sql: true
-
-
-application:
-  error:
-    default-exception-message: Beklenmeyen bir hata oluştu
-    access-denied: Üye girişi yapmalısınız.
-    basket-item-not-updated: Sepet ürün sayısı güncellenemedi.
-  api:
-    swagger:
-      path: /api-docs/swagger
-      version: 3.19.4
-      layout: StandaloneLayout
-      deepLinking: true
-      urls:
-        - name: ubw-rest
-          url: /api-docs/swagger/micronaut-transferex-api-1.0.yml

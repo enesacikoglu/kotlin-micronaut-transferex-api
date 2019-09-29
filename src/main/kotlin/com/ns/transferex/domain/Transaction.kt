@@ -7,10 +7,11 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-data class Transaction(@Id @GeneratedValue(strategy = GenerationType.AUTO) private val id: Int,
-                       var fromAccount: Int,
-                       var toAccount: Int,
-                       var amount: BigDecimal) {
+data class Transaction(@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+                       private val id: Int = 0,
+                       var fromAccount: Int = 0,
+                       var toAccount: Int = 0,
+                       var amount: BigDecimal = BigDecimal.ZERO) {
 
     companion object {
         fun new(fromAccount: Int, toAccount: Int, balance: BigDecimal): Transaction {

@@ -1,4 +1,4 @@
-package com.ns.transferex.application.queries
+package com.ns.transferex.application.queries.account
 
 import com.ns.transferex.application.service.AccountService
 import com.ns.transferex.domain.models.GetAccountByIdResponse

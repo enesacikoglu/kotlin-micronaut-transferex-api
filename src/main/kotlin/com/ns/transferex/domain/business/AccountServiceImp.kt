@@ -1,4 +1,4 @@
-package com.ns.transferex.infrastructure.business
+package com.ns.transferex.domain.business
 
 import com.ns.transferex.application.exceptions.DomainNotFoundException
 import com.ns.transferex.application.service.AccountService

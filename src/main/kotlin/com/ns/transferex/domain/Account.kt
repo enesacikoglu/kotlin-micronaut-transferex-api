@@ -5,7 +5,7 @@ import java.math.BigDecimal
 import javax.persistence.*
 
 @Entity
-data class Account(@Id @GeneratedValue(strategy = GenerationType.AUTO)
+data class Account(@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
                    private val id: Int = 0,
                    var owner: String = "",
                    var balance: BigDecimal = BigDecimal.ZERO,

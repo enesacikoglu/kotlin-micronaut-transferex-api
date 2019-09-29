@@ -13,6 +13,10 @@ open class TransactionRepositoryImp(private val entityManager: EntityManager) : 
         entityManager.persist(entity)
     }
 
+    override fun update(entity: Transaction): Transaction {
+        return entityManager.merge(entity)
+    }
+
     override fun findById(id: Int): Optional<Transaction> {
         return Optional.ofNullable(entityManager
                 .find(Transaction::class.java, id))

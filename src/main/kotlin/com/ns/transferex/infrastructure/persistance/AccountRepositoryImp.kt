@@ -6,6 +6,7 @@ import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
 import javax.persistence.EntityManager
+import javax.persistence.LockModeType
 
 @Singleton
 open class AccountRepositoryImp(private val entityManager: EntityManager) : AccountRepository {
@@ -15,7 +16,7 @@ open class AccountRepositoryImp(private val entityManager: EntityManager) : Acco
 
     override fun findById(id: Int): Optional<Account> {
         return Optional.ofNullable(entityManager
-                .find(Account::class.java, id))
+                .find(Account::class.java, id,LockModeType.OPTIMISTIC))
     }
 
     override fun update(entity: Account): Account {
