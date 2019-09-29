@@ -2,6 +2,7 @@ package com.ns.transferex.domain
 
 import com.ns.transferex.application.exceptions.BusinessException
 import java.math.BigDecimal
+import java.math.RoundingMode
 import javax.persistence.*
 
 @Entity
@@ -9,18 +10,18 @@ import javax.persistence.*
 data class Account(@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
                    var id: Int = 0,
                    var owner: String = "",
-                   var balance: BigDecimal = BigDecimal.ZERO,
+                   var balance: BigDecimal = BigDecimal.ZERO.setScale(2),
                    @Version
                    private val version: Long = 0L) {
 
     companion object {
         fun new(owner: String, balance: BigDecimal): Account {
-            return Account(0, owner, balance, 0L)
+            return Account(0, owner, balance.setScale(2,RoundingMode.HALF_DOWN), 0L)
         }
     }
 
     fun add(amount: BigDecimal) {
-        this.balance = this.balance.add(amount)
+        this.balance = this.balance.add(amount).setScale(2,RoundingMode.HALF_DOWN)
     }
 
     fun withdraw(amount: BigDecimal) {
@@ -28,6 +29,6 @@ data class Account(@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         if (currentBalance < BigDecimal.ZERO) {
             throw BusinessException("account.has.not.got.enough.balance")
         }
-        this.balance = currentBalance
+        this.balance = currentBalance.setScale(2,RoundingMode.HALF_DOWN)
     }
 }

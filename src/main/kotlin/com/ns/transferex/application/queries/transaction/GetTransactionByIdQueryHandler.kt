@@ -1,6 +1,5 @@
 package com.ns.transferex.application.queries.transaction
 
-import com.ns.transferex.application.queries.account.GetTransactionByIdQuery
 import com.ns.transferex.application.service.TransactionService
 import com.ns.transferex.domain.models.GetTransactionByIdResponse
 import com.ns.transferex.infrastructure.commandbus.QueryHandler

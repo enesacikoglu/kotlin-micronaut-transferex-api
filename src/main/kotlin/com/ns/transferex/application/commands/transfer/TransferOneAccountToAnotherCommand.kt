@@ -9,5 +9,5 @@ data class TransferOneAccountToAnotherCommand(@NotNull(message = "sender.account
                                 val fromAccount: Int,
                                 @NotNull(message = "receiver.account.can.not.be.empty")
                                 val toAccount: Int,
-                                @DecimalMin(value = "0.00", inclusive = false, message = "transfer.amount.can.not.be.negative")
+                                @DecimalMin(value = "0.0001", inclusive = false, message = "transfer.amount.can.not.be.negative")
                                 val amount: BigDecimal) : Command<Unit>
