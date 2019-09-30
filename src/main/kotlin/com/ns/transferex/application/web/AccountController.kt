@@ -6,8 +6,6 @@ import com.ns.transferex.application.queries.account.GetAllAccountsQuery
 import com.ns.transferex.domain.models.GetAccountByIdResponse
 import com.ns.transferex.infrastructure.commandbus.CommandBus
 import io.micronaut.http.annotation.*
-import io.micronaut.validation.Validated
-import javax.validation.Valid
 
 @Controller("/accounts")
 open class AccountController(private val commandBus: CommandBus) {
