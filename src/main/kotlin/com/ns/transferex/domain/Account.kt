@@ -27,7 +27,7 @@ data class Account(@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     fun withdraw(amount: BigDecimal) {
         val currentBalance = this.balance.subtract(amount)
         if (currentBalance < BigDecimal.ZERO) {
-            throw BusinessException("account.has.not.got.enough.balance")
+            throw BusinessException("Account has not got enough balance")
         }
         this.balance = currentBalance.setScale(2,RoundingMode.HALF_DOWN)
     }

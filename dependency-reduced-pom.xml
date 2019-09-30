@@ -247,62 +247,6 @@
     </dependency>
     <dependency>
       <groupId>io.micronaut</groupId>
-      <artifactId>cli</artifactId>
-      <version>1.0.0.RC2</version>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>slf4j-simple</artifactId>
-          <groupId>org.slf4j</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>plexus-component-api</artifactId>
-          <groupId>org.codehaus.plexus</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>picocli</artifactId>
-          <groupId>info.picocli</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>ant</artifactId>
-          <groupId>org.apache.ant</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>groovy-ant</artifactId>
-          <groupId>org.codehaus.groovy</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>groovy-json</artifactId>
-          <groupId>org.codehaus.groovy</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>groovy-jmx</artifactId>
-          <groupId>org.codehaus.groovy</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>groovy-xml</artifactId>
-          <groupId>org.codehaus.groovy</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>groovy-templates</artifactId>
-          <groupId>org.codehaus.groovy</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>jansi</artifactId>
-          <groupId>org.fusesource.jansi</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>jline</artifactId>
-          <groupId>jline</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>spring-boot-cli</artifactId>
-          <groupId>org.springframework.boot</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>io.micronaut</groupId>
       <artifactId>micronaut-http-client</artifactId>
       <version>1.2.0</version>
       <scope>test</scope>

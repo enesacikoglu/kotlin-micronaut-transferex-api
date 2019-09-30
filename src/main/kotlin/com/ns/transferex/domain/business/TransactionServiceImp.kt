@@ -18,7 +18,7 @@ open class TransactionServiceImp(private val transactionRepository: TransactionR
     @Transactional(readOnly = true)
     override fun getTransactionById(id: Int): Transaction {
         return transactionRepository.findById(id)
-                .orElseThrow { throw DomainNotFoundException("transaction.not.found") }
+                .orElseThrow { throw DomainNotFoundException("Transaction not found") }
     }
 
     @Transactional

@@ -17,12 +17,12 @@ open class TransferServiceImp(private val accountRepository: AccountRepository,
     override fun applyTransfer(transaction: Transaction) {
 
         val fromAccount = accountRepository.findById(transaction.fromAccount)
-                .orElseThrow { throw DomainNotFoundException("account.not.found") }
+                .orElseThrow { throw DomainNotFoundException("Account not found") }
         val toAccount = accountRepository.findById(transaction.toAccount)
-                .orElseThrow { throw DomainNotFoundException("account.not.found") }
+                .orElseThrow { throw DomainNotFoundException("Account not found") }
 
         if (fromAccount == toAccount) {
-            throw BusinessException("transfer.must.be.between.different.accounts")
+            throw BusinessException("Transfer must be between different accounts")
         }
 
         fromAccount.withdraw(transaction.amount)
