@@ -1,0 +1,154 @@
+{
+	"info": {
+		"name": "micronaut-transferex-api",
+		"_postman_id": "cc7387d7-f6ad-ea9b-12c8-366474ba421b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "transferex-create-account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"owner\":\"Hakan kara\",\n\t\"balance\":12000.120\n}"
+				},
+				"url": {
+					"raw": "http://localhost:6161/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6161",
+					"path": [
+						"accounts"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "transferex-transfer-between-accounts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"owner\":\"Hakan kara\",\n\t\"balance\":12000.120\n}"
+				},
+				"url": {
+					"raw": "http://localhost:6161/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6161",
+					"path": [
+						"accounts"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "transferex get-account-by-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:6161/accounts/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6161",
+					"path": [
+						"accounts",
+						"2"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "transferex get-all-accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:6161/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6161",
+					"path": [
+						"accounts"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "transferex get-all-transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:6161/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6161",
+					"path": [
+						"transactions"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "transferex get-transaction-by-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:6161/transactions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6161",
+					"path": [
+						"transactions",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
