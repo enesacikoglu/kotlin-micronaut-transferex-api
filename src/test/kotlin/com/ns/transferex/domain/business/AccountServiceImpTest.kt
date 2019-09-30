@@ -13,7 +13,7 @@ import java.math.BigDecimal
 import java.util.*
 
 @RunWith(MockitoJUnitRunner::class)
-class AccountServiceImpTest {
+internal class AccountServiceImpTest {
 
     @InjectMocks
     lateinit var accountServiceImp: AccountServiceImp
