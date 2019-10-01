@@ -21,7 +21,7 @@ internal class GetAllTransactionsQueryHandlerTest {
     lateinit var transactionService: TransactionService
 
     @Test
-    fun `it should get all transactions`() {
+    fun `😍 it should get all transactions  😍`() {
         //Arrange
         val getAllTransactionsQuery = GetAllTransactionsQuery()
         val transaction = Transaction(1, 61, 62, BigDecimal.TEN)

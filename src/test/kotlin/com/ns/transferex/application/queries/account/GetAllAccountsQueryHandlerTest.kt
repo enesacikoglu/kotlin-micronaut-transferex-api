@@ -21,7 +21,7 @@ internal class GetAllAccountsQueryHandlerTest {
     lateinit var accountService: AccountService
 
     @Test
-    fun `it should get all accounts`() {
+    fun `👼 it should get all accounts  👼`() {
         //Arrange
         val allAccountsQuery = GetAllAccountsQuery()
         val account1 = Account(1, "Enes", BigDecimal.ONE, 0)

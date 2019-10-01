@@ -11,7 +11,7 @@ import javax.validation.Valid
 open class TransferController(private val commandBus: CommandBus) {
 
     @Post
-    open fun transfer(@Body @Valid transferOneAccountToAnotherCommand: TransferOneAccountToAnotherCommand) {
+    open fun transfer(@Body transferOneAccountToAnotherCommand: TransferOneAccountToAnotherCommand) {
         commandBus.executeCommand(transferOneAccountToAnotherCommand)
     }
 

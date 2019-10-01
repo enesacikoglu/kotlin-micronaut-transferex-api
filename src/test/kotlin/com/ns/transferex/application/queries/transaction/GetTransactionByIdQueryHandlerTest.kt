@@ -21,7 +21,7 @@ internal class GetTransactionByIdQueryHandlerTest {
     lateinit var transactionService: TransactionService
 
     @Test
-    fun `it should get transaction by id`() {
+    fun `🌺 it should get transaction by id  🌺`() {
         //Arrange
         val getTransactionByIdQuery = GetTransactionByIdQuery(1)
         val transaction = Transaction(1, 61, 62, BigDecimal.ONE)

@@ -21,7 +21,7 @@ internal class GetAccountByIdQueryHandlerTest {
     lateinit var accountService: AccountService
 
     @Test
-    fun `it should get account by id`() {
+    fun `👰 it should get account by id  👰`() {
         //Arrange
         val idQuery = GetAccountByIdQuery(1)
         val account = Account(1, "Enes", BigDecimal.TEN, 0)

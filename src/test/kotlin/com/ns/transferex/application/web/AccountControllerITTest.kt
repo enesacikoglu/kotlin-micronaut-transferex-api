@@ -35,7 +35,7 @@ internal class AccountControllerITTest {
 
 
     @Test
-    fun ` 🙈 it should get account by id   🙈`() {
+    fun `💝 it should get account by id    💝`() {
         //Given
         val post = HttpRequest.POST(URI.create("/accounts"), CreateAccountCommand(owner = "Enes", balance = BigDecimal.TEN.setScale(2, RoundingMode.HALF_DOWN)))
         val get = HttpRequest.GET<URI>(URI.create("/accounts/1"))
@@ -76,7 +76,7 @@ internal class AccountControllerITTest {
 
 
     @Test
-    fun ` 😇 it should create account  😇`() {
+    fun ` 🚜 it should create account   🚜`() {
         //Given
         val createAccountResponse = HttpRequest.POST(URI.create("/accounts"), Account(id = 1, owner = "Enes", balance = BigDecimal.TEN.setScale(2, RoundingMode.HALF_DOWN)))
 

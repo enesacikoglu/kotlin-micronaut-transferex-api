@@ -30,7 +30,7 @@ internal class TransferOneAccountToAnotherCommandHandlerTest {
 
 
     @Test
-    fun `it should apply transfer`() {
+    fun `😁 it should apply transfer  😁`() {
         //Given
         val transferOneAccountToAnotherCommand = TransferOneAccountToAnotherCommand(4, 5, BigDecimal.TEN)
 
@@ -44,7 +44,7 @@ internal class TransferOneAccountToAnotherCommandHandlerTest {
 
 
     @Test
-    fun `it should throw business exception when balance is not positive`() {
+    fun `😱 it should throw business exception when balance is not positive 😱`() {
 
         //Given
         val transferOneAccountToAnotherCommand = TransferOneAccountToAnotherCommand(4, 5, BigDecimal.valueOf(-1))

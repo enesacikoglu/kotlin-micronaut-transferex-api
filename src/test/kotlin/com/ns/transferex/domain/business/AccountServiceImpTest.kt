@@ -27,7 +27,7 @@ internal class AccountServiceImpTest {
     lateinit var accountRepository: AccountRepository
 
     @Test
-    fun `it should get account by id`() {
+    fun `🙆 it should get account by id  🙆`() {
         // Given
         val account = Account(1, "Enes", BigDecimal.TEN, 0)
         given(accountRepository.findById(1)).willReturn(Optional.ofNullable(account))
@@ -43,7 +43,7 @@ internal class AccountServiceImpTest {
 
 
     @Test
-    fun `it should get all accounts`() {
+    fun `🙅 it should get all accounts  🙅`() {
         // Given
         val account1 = Account(1, "Enes", BigDecimal.ONE, 0)
         val account2 = Account(2, "Trabzonspor A.Ş", BigDecimal.TEN, 0)
@@ -61,7 +61,7 @@ internal class AccountServiceImpTest {
     }
 
     @Test
-    fun `it should save account`() {
+    fun `💁 it should save account  💁`() {
         // Given
         val account = Account(1, "Enes", BigDecimal.TEN, 0)
 
@@ -74,7 +74,7 @@ internal class AccountServiceImpTest {
 
 
     @Test
-    fun `it should update account`() {
+    fun `🙋 it should update account  🙋`() {
         // Given
         val account = Account(1, "Enes", BigDecimal.TEN, 0)
 

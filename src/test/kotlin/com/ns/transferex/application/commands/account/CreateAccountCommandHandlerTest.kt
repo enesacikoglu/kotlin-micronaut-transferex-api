@@ -31,7 +31,7 @@ internal class CreateAccountCommandHandlerTest {
 
 
     @Test
-    fun `it should create account`() {
+    fun `🌹 it should create account 🌹`() {
         //Given
         val createAccountCommand = CreateAccountCommand("Enes", BigDecimal.TEN)
 
@@ -45,7 +45,7 @@ internal class CreateAccountCommandHandlerTest {
 
 
     @Test
-    fun `it should throw business exception when balance is not positive`() {
+    fun `😨  it should throw business exception when balance is not positive   😨 `() {
         //Given
         val createAccountCommand = CreateAccountCommand("Enes", BigDecimal.valueOf(-61))
 
