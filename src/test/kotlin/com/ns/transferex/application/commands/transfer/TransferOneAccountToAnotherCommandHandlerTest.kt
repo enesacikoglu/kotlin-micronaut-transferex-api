@@ -1,6 +1,5 @@
 package com.ns.transferex.application.commands.transfer
 
-import com.ns.transferex.application.commands.account.CreateAccountCommand
 import com.ns.transferex.application.exceptions.BusinessException
 import com.ns.transferex.application.service.TransferService
 import com.ns.transferex.domain.Transaction
@@ -11,8 +10,8 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.InjectMocks
 import org.mockito.Mock
-import org.mockito.Mockito
-import org.mockito.Mockito.*
+import org.mockito.Mockito.verify
+import org.mockito.Mockito.verifyZeroInteractions
 import org.mockito.Spy
 import org.mockito.junit.MockitoJUnitRunner
 import java.math.BigDecimal
