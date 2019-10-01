@@ -6,10 +6,10 @@ import java.math.BigDecimal
 import javax.inject.Singleton
 
 @Singleton
-class TransferOneAccountToAnotherCommandValidator {
+open class TransferOneAccountToAnotherCommandValidator {
 
-    fun validate(command: TransferOneAccountToAnotherCommand) {
-        if (command.amount < BigDecimal.ZERO)
-            throw BusinessException("Transfer amount can not be negative")
+    open fun validate(command: TransferOneAccountToAnotherCommand) {
+        if (command.amount <= BigDecimal.ZERO)
+            throw BusinessException("Transfer amount must be positive")
     }
 }

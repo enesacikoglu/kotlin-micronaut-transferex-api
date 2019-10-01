@@ -7,10 +7,10 @@ import java.math.BigDecimal
 import javax.inject.Singleton
 
 @Singleton
-class CreateAccountCommandValidator {
+open class CreateAccountCommandValidator {
 
-    fun validate(command: CreateAccountCommand) {
-        if (command.balance < BigDecimal.ZERO)
-            throw BusinessException("Balance can not be negative")
+    open fun validate(command: CreateAccountCommand) {
+        if (command.balance <= BigDecimal.ZERO)
+            throw BusinessException("Balance must be positive")
     }
 }
