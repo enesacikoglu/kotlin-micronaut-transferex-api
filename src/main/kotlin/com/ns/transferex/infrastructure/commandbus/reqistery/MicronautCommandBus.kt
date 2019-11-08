@@ -1,6 +1,6 @@
 package com.ns.transferex.infrastructure.commandbus.reqistery
 
-import com.ns.transferex.infrastructure.commandbus.*
+import com.ns.transferex.application.commandbus.*
 import javax.inject.Singleton
 
 

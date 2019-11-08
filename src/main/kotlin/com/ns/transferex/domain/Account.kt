@@ -16,12 +16,12 @@ data class Account(@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     companion object {
         fun new(owner: String, balance: BigDecimal): Account {
-            return Account(0, owner, balance.setScale(2,RoundingMode.HALF_DOWN), 0L)
+            return Account(0, owner, balance.setScale(2, RoundingMode.HALF_DOWN), 0L)
         }
     }
 
     fun add(amount: BigDecimal) {
-        this.balance = this.balance.add(amount).setScale(2,RoundingMode.HALF_DOWN)
+        this.balance = this.balance.add(amount).setScale(2, RoundingMode.HALF_DOWN)
     }
 
     fun withdraw(amount: BigDecimal) {
@@ -29,6 +29,20 @@ data class Account(@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         if (currentBalance < BigDecimal.ZERO) {
             throw BusinessException("Account has not got enough balance")
         }
-        this.balance = currentBalance.setScale(2,RoundingMode.HALF_DOWN)
+        this.balance = currentBalance.setScale(2, RoundingMode.HALF_DOWN)
+    }
+
+    fun transferTo(toAccount: Account, amount: BigDecimal): Transaction {
+        if (amount <= BigDecimal.ZERO) {
+            throw BusinessException("Transfer amount must be positive")
+        }
+        
+        if (this == toAccount) {
+            throw BusinessException("Transfer must be between different accounts")
+        }
+
+        this.withdraw(amount)
+        toAccount.add(amount)
+        return Transaction.new(this.id, toAccount.id, amount)
     }
 }

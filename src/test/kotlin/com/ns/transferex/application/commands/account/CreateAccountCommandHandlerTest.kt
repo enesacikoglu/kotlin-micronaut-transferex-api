@@ -1,9 +1,8 @@
 package com.ns.transferex.application.commands.account
 
 import com.ns.transferex.application.exceptions.BusinessException
+import com.ns.transferex.application.persistence.AccountRepository
 import com.ns.transferex.domain.Account
-import com.ns.transferex.domain.business.AccountServiceImp
-import com.ns.transferex.domain.business.validator.CreateAccountCommandValidator
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.catchThrowableOfType
 import org.junit.Test
@@ -24,10 +23,7 @@ internal class CreateAccountCommandHandlerTest {
     lateinit var createAccountCommandHandler: CreateAccountCommandHandler
 
     @Mock
-    lateinit var accountService: AccountServiceImp
-
-    @Spy
-    lateinit var createAccountCommandValidator: CreateAccountCommandValidator
+    lateinit var accountRepository: AccountRepository
 
 
     @Test
@@ -39,8 +35,7 @@ internal class CreateAccountCommandHandlerTest {
         createAccountCommandHandler.handle(createAccountCommand)
 
         //Then
-        verify(createAccountCommandValidator).validate(createAccountCommand)
-        verify(accountService).save(Account.new(createAccountCommand.owner, createAccountCommand.balance))
+        verify(accountRepository).save(Account.new(createAccountCommand.owner, createAccountCommand.balance))
     }
 
 
@@ -53,8 +48,7 @@ internal class CreateAccountCommandHandlerTest {
         val exception = catchThrowableOfType({ createAccountCommandHandler.handle(createAccountCommand) }, BusinessException::class.java)
 
         //Then
-        verify(createAccountCommandValidator).validate(createAccountCommand)
-        verifyZeroInteractions(accountService)
+        verifyZeroInteractions(accountRepository)
         assertThat(exception.message).isEqualTo("Balance must be positive")
     }
 }
