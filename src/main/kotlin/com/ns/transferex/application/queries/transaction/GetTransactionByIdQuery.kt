@@ -1,6 +1,5 @@
 package com.ns.transferex.application.queries.transaction
 
-import com.ns.transferex.domain.models.GetTransactionByIdResponse
-import com.ns.transferex.infrastructure.commandbus.Query
+import com.ns.transferex.application.commandbus.Query
 
 data class GetTransactionByIdQuery(val transactionId: Int) : Query<GetTransactionByIdResponse?>

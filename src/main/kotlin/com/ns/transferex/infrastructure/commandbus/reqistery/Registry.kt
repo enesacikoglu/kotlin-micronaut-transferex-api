@@ -1,9 +1,9 @@
 package com.ns.transferex.infrastructure.commandbus.reqistery
 
-import com.ns.transferex.infrastructure.commandbus.Command
-import com.ns.transferex.infrastructure.commandbus.CommandHandler
-import com.ns.transferex.infrastructure.commandbus.Query
-import com.ns.transferex.infrastructure.commandbus.QueryHandler
+import com.ns.transferex.application.commandbus.Command
+import com.ns.transferex.application.commandbus.CommandHandler
+import com.ns.transferex.application.commandbus.Query
+import com.ns.transferex.application.commandbus.QueryHandler
 import io.micronaut.context.ApplicationContext
 import io.micronaut.inject.BeanDefinition
 import io.micronaut.core.reflect.GenericTypeUtils

@@ -1,6 +1,6 @@
 package com.ns.transferex.infrastructure.commandbus.reqistery
 
-import com.ns.transferex.infrastructure.commandbus.CommandHandler
+import com.ns.transferex.application.commandbus.CommandHandler
 import io.micronaut.context.ApplicationContext
 
 
