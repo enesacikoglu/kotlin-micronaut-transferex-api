@@ -140,7 +140,7 @@
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>micronaut-http-client</artifactId>
-            <version>1.2.0</version>
+            <version>1.2.11</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
